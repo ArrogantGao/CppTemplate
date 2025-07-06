@@ -1,5 +1,7 @@
 # CppTemplate
 
+[![tests](https://github.com/ArrogantGao/CppTemplate/actions/workflows/ci.yml/badge.svg)](https://github.com/ArrogantGao/CppTemplate/actions/workflows/ci.yml)
+
 A personal cpp project template, using cmake for compiling and gtest for testing.
 
 How to use:
