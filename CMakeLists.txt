@@ -1,12 +1,17 @@
-cmake_minimum_required(VERSION 3.14)
-project(cpp_template)
+cmake_minimum_required(VERSION 3.18)
+project(cpp_template LANGUAGES CXX)
 
-# GoogleTest requires at least C++17
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 option(BUILD_TESTS "Build tests" ON)
 option(BUILD_EXAMPLES "Build examples" OFF)
+
+if (CMAKE_CXX_COMPILER_ID MATCHES "Intel")
+  add_compile_options("-DSCTL_HAVE_SVML")
+else()
+  add_compile_options("-DSCTL_HAVE_LIBMVEC")
+endif()
 
 add_compile_options("-march=native")
 
